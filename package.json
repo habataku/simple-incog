@@ -14,8 +14,6 @@
     "app.json"
   ],
   "dependencies": {
-    "@titaniumnetwork-dev/ultraviolet": "^2.0.0",
-    "@tomphttp/bare-server-node": "^2.0.1",
     "body-parser": "^1.20.2",
     "connect": "^3.7.0",
     "serve-index": "^1.9.1",
