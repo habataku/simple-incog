@@ -1,15 +1,17 @@
-FROM node:18-alpine
+#Sample Dockerfile for NodeJS Apps
+
+FROM node:16
 
 ENV NODE_ENV=production
-ARG NPM_BUILD="npm install --omit=dev"
-EXPOSE 8080/tcp
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json", "./"]
-RUN $NPM_BUILD
+COPY ["package.json","./"]
+
+RUN npm install --production
 
 COPY . .
 
-ENTRYPOINT [ "node" ]
-CMD ["src/index.js"]
+EXPOSE 8080
+
+CMD [ "node", "index.js" ]
